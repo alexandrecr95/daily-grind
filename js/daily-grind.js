@@ -17,10 +17,6 @@ return ` <p>
             <strong class="feature">${coffee.day} Coffee Special:</strong> ${coffee.day} daily coffee special is <strong class="feature">${coffee.name}</strong>, ${coffee.desc}</p>
 
   `;
-
-
-
-
 }
 
 
@@ -30,7 +26,25 @@ let myDate = new Date();
 
 let today = myDate.getDay();
 
+//use location object to access querystring (address bar)
+const queryString = window.location.search;
+    
+//output to console    
+console.log(queryString);
+    
+//separate query string parameters
+const urlParams = new URLSearchParams(queryString);
+
+
 //today = 3;
+
+if(urlParams.has("day")){//from querystring
+  today = urlParams.get("day");
+}
+
+ today = parseInt(today);
+ 
+ //console.log(today);
 
 switch (today) {
 
@@ -48,6 +62,14 @@ switch (today) {
 
   case 2:
     today = "Tuesday";
+    coffee = {
+      name: "Drip",
+      color: "black",
+      pic: "images/drip.jpg",
+      alt: "A picture of a drip coffee",
+      day: "Tuesday",
+      desc: `I like me some drip coffee`
+    };
     break;
 
   case 3:
@@ -62,5 +84,6 @@ switch (today) {
 
 document.getElementById("coffee-cup").innerHTML = coffeeTemplate(coffee);
 
+document.querySelector("html").style.backgroundColor = coffee.color;
 //alert(today);
 console.log(coffee);
