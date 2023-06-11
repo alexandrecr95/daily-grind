@@ -47,7 +47,18 @@ if(urlParams.has("day")){//from querystring
  //console.log(today);
 
 switch (today) {
-
+  
+  case 0:
+    today = "Sunday";
+    coffee = {
+      name: "Pumpkin Spice Latte",
+      color: "orange",
+      pic: "images/pumpkin-spice-latte.jpg",
+      alt: "A picture of a pumpkin spice latte",
+      day: "Sunday",
+      desc: `I like me some pumpkin spice latte`
+    };
+    break;
   case 1:
     today = "Monday"
     coffee = {
@@ -120,17 +131,6 @@ switch (today) {
           };
           break;
 
-          case 7:
-            today = "Sunday";
-            coffee = {
-              name: "Pumpkin Spice Latte",
-              color: "orange",
-              pic: "images/pumpkin-spice-latte.jpg",
-              alt: "A picture of a pumpkin spice latte",
-              day: "Sunday",
-              desc: `I like me some pumpkin spice latte`
-            };
-            break;
 
   default:
     today = "Not sure what day it is!";
