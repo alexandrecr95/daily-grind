@@ -20,6 +20,7 @@ return ` <p>
 }
 
 
+
 //alert("Can you see this?");
 
 let myDate = new Date();
@@ -87,7 +88,7 @@ switch (today) {
     today = "Wednesday";
     coffee = {
       name: "Caramel Latte",
-      color: "orange",
+      color: "green",
       pic: "images/caramel-latte.jpg",
       alt: "A picture of a caramel latte",
       day: "Wednesday",
